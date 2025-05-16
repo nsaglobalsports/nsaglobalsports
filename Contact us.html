@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="title" content="Synthetic Acrylic Court Installation - NSA Global Sports" />
+  <meta name="description" content="Get professional synthetic acrylic court installation for badminton, tennis, and other sports. Durable, weather-proof, and low maintenance surfaces." />
+  <meta name="keywords" content="synthetic court, acrylic court, synthetic acrylic flooring, sports court installation, NSA Global Sports" />
+  <meta name="author" content="NSA Global Sports" />
+  <title>NSA Global Sports</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-..."
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+<!-- manifest.json ko link karein -->
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#007bff">
+
+<!-- Service Worker Register -->
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(function(registration) {
+        console.log('Service Worker registered with scope:', registration.scope);
+      })
+      .catch(function(error) {
+        console.log('Service Worker registration failed:', error);
+      });
+  }
+</script>
+
+
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    /* Header + Navbar Container */
+    .top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* CHANGE ADDED: space for menu icon */
+      padding: 10px 20px;
+      background-color: #0c1e36;
+      color: white;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      height: 50px;
+      margin-right: 15px;
+    }
+
+    .site-name {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .menu-icon { /* CHANGE ADDED: hamburger icon style */
+      display: none;
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      background-color: #142a4f;
+      padding: 10px 0;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: white;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      transition: background 0.3s;
+    }
+
+    .nav-links li a:hover {
+      background-color: #1e3a6b;
+      border-radius: 5px;
+    }
+
+    /* Responsive Navbar Changes */
+    @media (max-width: 768px) {
+      .site-name {
+        font-size: 1.4rem;
+      }
+
+      .logo {
+        height: 40px;
+      }
+
+      .nav-links {
+        display: none; /* CHANGE ADDED: hide menu by default */
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: #142a4f;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 100%;
+        padding: 10px 20px;
+        gap: 15px;
+      }
+
+      .nav-links.active { /* CHANGE ADDED: show menu when active */
+        display: flex;
+      }
+
+      .menu-icon { /* CHANGE ADDED: show hamburger in mobile */
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Fixed Top Bar (Header + Navbar) -->
+  <div class="top-bar">
+    <header class="header">
+      <div class="header-left">
+        <img src="logo.png" alt="NSA Logo" class="logo">
+        <h1 class="site-name">NSA Global Sports</h1>
+      </div>
+      <div class="menu-icon" onclick="toggleMenu()"> <!-- CHANGE ADDED -->
+        <i class="fas fa-bars"></i>
+      </div>
+    </header>
+
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="synthetic.html"><i class="fas fa-industry"></i> Sythentic Acrylic</a></li>
+        <li><a href="Sports Section.html"><i class="fas fa-basketball-ball"></i> Sports</a></li>
+        <li><a href="Gallery.html"><i class="fas fa-image"></i> Gallery</a></li>
+        <li><a href="Projects.html" class="projects"><i class="fas fa-briefcase"></i> Projects</a></li>
+        <li><a href="Services.html"><i class="fas fa-cogs"></i> Services</a></li>
+        <li><a href="Contact us.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+  <!-- NAVBAR TOGGLE SCRIPT -->
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('active'); // CHANGE ADDED
+    }
+  </script>
+
+
+  
+
+
+<!-- Hero Section -->
+<!-- <style>
+  .hero-section {
+    padding-top: 130px; /* Fixed navbar adjustment */
+    height: 50vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('https://images.unsplash.com/photo-1605875243847-2f5a50f79d2e?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-section h2 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px #000;
+  }
+
+  .hero-section p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 4px #000;
+  }
+
+  .hero-btn {
+    background-color: #ffcc00;
+    color: #000;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  }
+
+  .hero-btn:hover {
+    background-color: #e6b800;
+  }
+
+  @media (max-width: 768px) {
+    .hero-section h2 {
+      font-size: 2.2rem;
+    }
+
+    .hero-section p {
+      font-size: 1rem;
+      padding: 0 15px;
+    }
+
+    .hero-btn {
+      padding: 10px 20px;
+    }
+  }
+</style>
+
+<section class="hero-section">
+  <h2>Unleash Your Potential with NSA Global Sports</h2>
+  <p>Top-notch synthetic courts and surfaces for badminton, basketball, tennis, kabaddi, and more – designed to elevate your game.</p>
+  <button class="hero-btn">Explore Our Services</button>
+</section> -->
+
+
+
+
+
+<style>
+/* Profile Circle Photo */
+.profile-photo {
+  margin-top: 120px;
+  padding-top: 120px;
+  text-align: center;
+}
+
+.profile-photo img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #ffcc00;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* About Section */
+.about-section {
+  padding: 40px 20px 20px;
+  text-align: center;
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  color: #0c1e36;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  font-size: 1rem;
+  max-width: 800px;
+  margin: auto;
+  line-height: 1.6;
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 40px 20px;
+  background: #eef1f5;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #0c1e36;
+}
+
+.contact-info p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.contact-info i {
+  color: #ffcc00;
+  margin-right: 8px;
+}
+
+/* Social Media Links */
+.social-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: #0c1e36;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #ffcc00;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: white;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  z-index: 999;
+  transition: transform 0.3s;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+</style>
+
+<!-- Profile Photo -->
+<div class="profile-photo">
+  <img src="abc16.jpeg" alt="Your Photo">
+</div>
+
+<!-- About Section -->
+<section class="about-section">
+  <h2>About Our Company</h2>
+  <p>
+    Welcome to NSA Global Sports — your trusted partner for top-quality synthetic courts and sports infrastructure.
+    We specialize in building world-class facilities for badminton, tennis, basketball, kabaddi, and more.
+    Our mission is to empower athletes and sports lovers with the best surfaces to unleash their potential.
+  </p>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section">
+  <h2>Contact Us</h2>
+  <div class="contact-info">
+    <p><i class="fas fa-envelope"></i> Email: <a href="mailto:nsaglobalsports@gmail.com">nsaglobalsports@gmail.com</a></p>
+    <p><i class="fas fa-phone"></i> Mobile: <a href="tel:+918583822564">8583822564</a>, <a href="tel:+917992395963">7992395963</a></p>
+  </div>
+
+  <div class="social-links">
+    <a href="https://wa.me/918583822564" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.facebook.com/profile.php?id=61566802228099" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
+</section>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/918583822564" class="whatsapp-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Font Awesome link -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+
+
+
+
+
+
+
+
+<!-- Footer -->
+<style>
+  .footer {
+    background-color: #0c1e36;
+    color: white;
+    padding: 50px 20px 20px;
+    position: relative;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1500px;
+    margin: auto;
+    gap: 30px;
+  }
+
+  .footer-col {
+    flex: 1 1 250px;
+  }
+
+  .footer-center {
+    background-color: #1b2f52;
+    padding: 25px 20px;
+    border-radius: 12px;
+  }
+
+  .footer-col.right-col {
+    margin-left: auto; /* Pushes it to the right */
+    text-align: right; /* Aligns text to right */
+  }
+
+  .footer h3 {
+    color: #ffba08;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+
+  .footer p,
+  .footer a {
+    color: #ccc;
+    font-size: 0.95rem;
+    text-decoration: none;
+    margin: 5px 0;
+    display: block;
+  }
+
+  .footer a:hover {
+    color: #ffba08;
+  }
+
+  .social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .social-links a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.95rem;
+  }
+
+  .copyright {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.85rem;
+    color: #bbb;
+  }
+
+  /* WhatsApp Floating Button */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    z-index: 999;
+    transition: transform 0.3s;
+  }
+
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: #1ebe5d;
+  }
+</style>
+
+<footer class="footer" id="contact">
+  <div class="footer-container">
+
+    <!-- Left Column -->
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <a href="index.html">Home</a>
+      <a href="Contact us.html">About</a>
+      <a href="Projects.html">Projects</a>
+    </div>
+
+    <!-- Center Column -->
+    <div class="footer-col footer-center">
+      <h3>Contact Us</h3>
+      <p>Email: nsaglobalsports@gmail.com</p>
+      <p>Phone: +91-8583822564</p>
+      <h3 style="margin-top: 20px;">Follow Us</h3>
+      <div class="social-links">
+        <a href="https://www.facebook.com/profile.php?id=61566802228099"><i class="fab fa-facebook"></i> Facebook</a>
+        <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://youtube.com/@nsaglobalsports?si=6ys3CeP0Qpa5NCL-"><i class="fab fa-youtube"></i> YouTube</a><!-- 
+        <a href="#"><i class="fab fa-twitter"></i> Twitter</a> -->
+      </div>
+    </div>
+
+    <!-- Right Column (Aligned to right) -->
+    <div class="footer-col right-col">
+      <h3>External Links</h3>
+      <a href="https://www.olympics.com/en/">Olympic Games</a>
+      <a href="https://sportsauthorityofindia.nic.in/">Sports Authority of India</a>
+      <a href="https://kheloindia.gov.in/">Khelo India</a>
+      <a href="https://yas.gov.in/">Ministry of Youth Affairs and Sports</a>
+      <a href="https://nsfoi.com/">NSFOI</a>
+    </div>
+
+  </div>
+
+  <div class="copyright">
+    &copy; 2025 NSA Global Sports. All rights reserved.
+  </div>
+</footer>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/918583822564" class="whatsapp-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Font Awesome (only once per page) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+</body>
+</html>

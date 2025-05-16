@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="title" content="Synthetic Acrylic Court Installation - NSA Global Sports" />
+  <meta name="description" content="Get professional synthetic acrylic court installation for badminton, tennis, and other sports. Durable, weather-proof, and low maintenance surfaces." />
+  <meta name="keywords" content="synthetic court, acrylic court, synthetic acrylic flooring, sports court installation, NSA Global Sports" />
+  <meta name="author" content="NSA Global Sports" />
+  <title>NSA Global Sports</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-..."
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+<!-- manifest.json ko link karein -->
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#007bff">
+
+<!-- Service Worker Register -->
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(function(registration) {
+        console.log('Service Worker registered with scope:', registration.scope);
+      })
+      .catch(function(error) {
+        console.log('Service Worker registration failed:', error);
+      });
+  }
+</script>
+
+
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    /* Header + Navbar Container */
+    .top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* CHANGE ADDED: space for menu icon */
+      padding: 10px 20px;
+      background-color: #0c1e36;
+      color: white;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      height: 50px;
+      margin-right: 15px;
+    }
+
+    .site-name {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .menu-icon { /* CHANGE ADDED: hamburger icon style */
+      display: none;
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      background-color: #142a4f;
+      padding: 10px 0;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: white;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      transition: background 0.3s;
+    }
+
+    .nav-links li a:hover {
+      background-color: #1e3a6b;
+      border-radius: 5px;
+    }
+
+    /* Responsive Navbar Changes */
+    @media (max-width: 768px) {
+      .site-name {
+        font-size: 1.4rem;
+      }
+
+      .logo {
+        height: 40px;
+      }
+
+      .nav-links {
+        display: none; /* CHANGE ADDED: hide menu by default */
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: #142a4f;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 100%;
+        padding: 10px 20px;
+        gap: 15px;
+      }
+
+      .nav-links.active { /* CHANGE ADDED: show menu when active */
+        display: flex;
+      }
+
+      .menu-icon { /* CHANGE ADDED: show hamburger in mobile */
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Fixed Top Bar (Header + Navbar) -->
+  <div class="top-bar">
+    <header class="header">
+      <div class="header-left">
+        <img src="logo.png" alt="NSA Logo" class="logo">
+        <h1 class="site-name">NSA Global Sports</h1>
+      </div>
+      <div class="menu-icon" onclick="toggleMenu()"> <!-- CHANGE ADDED -->
+        <i class="fas fa-bars"></i>
+      </div>
+    </header>
+
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="synthetic.html"><i class="fas fa-industry"></i> Sythentic Acrylic</a></li>
+        <li><a href="Sports Section.html"><i class="fas fa-basketball-ball"></i> Sports</a></li>
+        <li><a href="Gallery.html"><i class="fas fa-image"></i> Gallery</a></li>
+        <li><a href="Projects.html" class="projects"><i class="fas fa-briefcase"></i> Projects</a></li>
+        <li><a href="Services.html"><i class="fas fa-cogs"></i> Services</a></li>
+        <li><a href="Contact us.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+  <!-- NAVBAR TOGGLE SCRIPT -->
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('active'); // CHANGE ADDED
+    }
+  </script>
+
+
+<style>
+  .court-sections-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 150px 20px 60px;
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+  }
+
+  .court-section {
+    flex: 1;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    max-width: 48%;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .court-section h1 {
+    padding-top: 40px;
+    font-size: 3.8rem;
+    color: #0a2e57;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+  }
+
+  .court-section h2 {
+    font-size: 2.2rem;
+    color: #11468f;
+    margin-bottom: 50px;
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  .content-container {
+    text-align: left;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    color: #ff6f00;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .section-title::after {
+    content: "";
+    width: 60px;
+    height: 4px;
+    background: #ff6f00;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    border-radius: 2px;
+  }
+
+  .intro {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.8;
+    font-weight: 400;
+  }
+
+  .content-container ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+  }
+
+  .content-container ul li {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .content-container ul li::before {
+    content: "\2714"; /* ✔️ tick mark Unicode */
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 1.2rem;
+    color: #4CAF50; /* Green color tick */
+    font-weight: bold;
+  }
+
+  .court-image {
+    margin: 40px 0;
+    text-align: center;
+  }
+
+  .court-image img {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .disclaimer {
+    margin-top: 40px;
+    font-size: 0.95rem;
+    color: #555;
+    background: #fff8e1;
+    padding: 20px;
+    border-left: 5px solid #ffc107;
+    border-radius: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .court-sections-container {
+      flex-direction: column;
+      padding: 100px 20px 40px;
+    }
+
+    .court-section {
+      max-width: 100%;
+    }
+
+    .court-section h1 {
+      font-size: 2.8rem;
+    }
+
+    .court-section h2 {
+      font-size: 1.6rem;
+    }
+
+    .content-container {
+      padding: 30px 20px;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+    }
+
+    .content-container ul li {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+<section class="court-sections-container">
+  <!-- Skating Track Section -->
+  <div class="court-section">
+    <h1>Skating Track</h1>
+    <h2>The Thrill of Skating</h2>
+    <div class="content-container">
+      <p class="intro">
+        Skating is an exciting sport where individuals use specially designed shoes or boots with wheels to glide across the track. It requires speed, agility, and balance. Skating tracks are designed to offer smooth surfaces for skaters to perform their stunts and speed runs. It is popular in both recreational and competitive settings.
+      </p>
+
+      <div class="section-title">Game Facts and History</div>
+      <ul>
+        <li>Skating dates back to the 18th century, with the first wooden roller skates invented in 1760 by John Joseph Merlin.</li>
+        <li>Competitive roller skating began in the 1930s and has since gained international popularity.</li>
+        <li>The International Skating Union (ISU) governs competitive ice skating, while the International Roller Sports Federation (FIRS) oversees roller skating events.</li>
+        <li>Inline skating, also known as rollerblading, became popular in the 1980s and has grown into a global sport.</li>
+        <li>Skating is a popular activity for fitness and recreation, with various forms like speed skating, artistic skating, and roller derby.</li>
+      </ul>
+
+      <div class="section-title">Track Measurements</div>
+      <ul>
+        <li>The standard length for a roller skating track is <strong>200 meters</strong>.</li>
+        <li>The width of the track is generally <strong>6 meters</strong>.</li>
+        <li>The track's surface should be smooth, either made of wood or a synthetic material.</li>
+        <li>The oval-shaped track has a <strong>radius of 15 meters</strong> for the inner lanes.</li>
+        <li>There are typically <strong>4-6 lanes</strong> on a professional skating track.</li>
+      </ul>
+
+      <div class="section-title">Net Specifications</div>
+      <ul>
+        <li>For competitive roller skating, no nets are typically used, as the track is open.</li>
+        <li>However, for artistic skating, some events may have a perimeter net for safety.</li>
+      </ul>
+
+      <div class="court-image">
+        <img src="skating-track.jpg" alt="Skating Track">
+      </div>
+
+      <div class="disclaimer">
+        <strong>Disclaimer:</strong> Track dimensions and specifications follow FIRS regulations. Some variations may exist depending on the event or location.
+      </div>
+    </div>
+  </div>
+
+  <!-- Running Track Section -->
+  <div class="court-section">
+    <h1>Running Track</h1>
+    <h2>The Ultimate Endurance Challenge</h2>
+    <div class="content-container">
+      <p class="intro">
+        The running track is an essential part of any athletics competition. It provides a standard surface for sprinters, distance runners, and relay teams to compete. Tracks are typically oval-shaped, with multiple lanes that allow for organized and competitive racing. Track running is a sport focused on speed, agility, and endurance.
+      </p>
+
+      <div class="section-title">Game Facts and History</div>
+      <ul>
+        <li>The first running tracks appeared in ancient Greece, where the Olympic Games featured footraces.</li>
+        <li>Modern running tracks were standardized in the late 19th century.</li>
+        <li>The 400-meter track is the standard distance for most outdoor racing events.</li>
+        <li>Track and field events include sprints, middle-distance races, long-distance races, and relays.</li>
+        <li>The track is a symbol of athletic performance and has produced countless world records.</li>
+      </ul>
+
+      <div class="section-title">Track Measurements</div>
+      <ul>
+        <li>The standard outdoor track length is <strong>400 meters</strong> for one complete lap.</li>
+        <li>The track consists of <strong>8 or 9 lanes</strong>, each 1.22 meters wide.</li>
+        <li>The curve radius for the track is generally <strong>36.5 meters</strong>.</li>
+        <li>The straight portion of the track is <strong>84.39 meters</strong> long.</li>
+        <li>The track surface should be made of synthetic materials like polyurethane or rubber.</li>
+      </ul>
+
+      <div class="section-title">Net Specifications</div>
+      <ul>
+        <li>Running tracks typically do not have nets as they are open tracks.</li>
+        <li>In some relay races, runners pass the baton to each other, which requires a clean handoff without barriers.</li>
+      </ul>
+
+      <div class="court-image">
+        <img src="running-track.jpg" alt="Running Track">
+      </div>
+
+      <div class="disclaimer">
+        <strong>Disclaimer:</strong> Track dimensions and specifications follow IAAF (International Association of Athletics Federations) regulations.
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<!-- Footer -->
+<style>
+  .footer {
+    background-color: #0c1e36;
+    color: white;
+    padding: 50px 20px 20px;
+    position: relative;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1500px;
+    margin: auto;
+    gap: 30px;
+  }
+
+  .footer-col {
+    flex: 1 1 250px;
+  }
+
+  .footer-center {
+    background-color: #1b2f52;
+    padding: 25px 20px;
+    border-radius: 12px;
+  }
+
+  .footer-col.right-col {
+    margin-left: auto; /* Pushes it to the right */
+    text-align: right; /* Aligns text to right */
+  }
+
+  .footer h3 {
+    color: #ffba08;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+
+  .footer p,
+  .footer a {
+    color: #ccc;
+    font-size: 0.95rem;
+    text-decoration: none;
+    margin: 5px 0;
+    display: block;
+  }
+
+  .footer a:hover {
+    color: #ffba08;
+  }
+
+  .social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .social-links a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.95rem;
+  }
+
+  .copyright {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.85rem;
+    color: #bbb;
+  }
+
+  /* WhatsApp Floating Button */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    z-index: 999;
+    transition: transform 0.3s;
+  }
+
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: #1ebe5d;
+  }
+</style>
+
+<footer class="footer" id="contact">
+  <div class="footer-container">
+
+    <!-- Left Column -->
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <a href="index.html">Home</a>
+      <a href="Contact us.html">About</a>
+      <a href="Projects.html">Projects</a>
+    </div>
+
+    <!-- Center Column -->
+    <div class="footer-col footer-center">
+      <h3>Contact Us</h3>
+      <p>Email: nsaglobalsports@gmail.com</p>
+      <p>Phone: +91-8583822564</p>
+      <h3 style="margin-top: 20px;">Follow Us</h3>
+      <div class="social-links">
+        <a href="https://www.facebook.com/profile.php?id=61566802228099"><i class="fab fa-facebook"></i> Facebook</a>
+        <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://youtube.com/@nsaglobalsports?si=6ys3CeP0Qpa5NCL-"><i class="fab fa-youtube"></i> YouTube</a><!-- 
+        <a href="#"><i class="fab fa-twitter"></i> Twitter</a> -->
+      </div>
+    </div>
+
+    <!-- Right Column (Aligned to right) -->
+    <div class="footer-col right-col">
+      <h3>External Links</h3>
+      <a href="https://www.olympics.com/en/">Olympic Games</a>
+      <a href="https://sportsauthorityofindia.nic.in/">Sports Authority of India</a>
+      <a href="https://kheloindia.gov.in/">Khelo India</a>
+      <a href="https://yas.gov.in/">Ministry of Youth Affairs and Sports</a>
+      <a href="https://nsfoi.com/">NSFOI</a>
+    </div>
+
+  </div>
+
+  <div class="copyright">
+    &copy; 2025 NSA Global Sports. All rights reserved.
+  </div>
+</footer>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/918583822564" class="whatsapp-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Font Awesome (only once per page) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+</body>
+</html>

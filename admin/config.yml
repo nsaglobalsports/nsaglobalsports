@@ -1,0 +1,16 @@
+backend:
+  name: git-gateway
+  branch: main  # ya aapka repo ka default branch
+
+media_folder: "images/gallery"       # yahan image save hongi
+public_folder: "/images/gallery"     # URL path for image
+
+collections:
+  - name: "gallery"
+    label: "Gallery"
+    folder: "content/gallery"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }

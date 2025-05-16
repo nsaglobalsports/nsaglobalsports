@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NSA Global Sports - Quotation Generator</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Poppins:wght@400;600&display=swap');
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 10px;
+      background: #f2f2f2;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+    }
+    .invoice-container, .preview-container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+    .invoice-header {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+      font-family: 'Oswald', sans-serif;
+      background: linear-gradient(90deg, #0c1e36, #1c3c68);
+      padding: 10px 20px;
+      color: white;
+      border-radius: 8px;
+    }
+    .invoice-header img {
+      height: 60px;
+      filter: drop-shadow(1px 1px 3px rgba(0,0,0,0.3));
+    }
+    .invoice-header .center-text {
+      text-align: center;
+      flex: 1;
+    }
+    .invoice-header .center-text h2 {
+      margin: 5px 0;
+      font-size: 26px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: yellow; /* NSA Global Sports color */
+    }
+    .invoice-header .center-text p {
+      margin: 0;
+      font-size: 14px;
+    }
+    .invoice-header .right-text p {
+      margin: 3px 0;
+      font-size: 13px;
+      text-align: right;
+    }
+
+    .invoice-details {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 0;
+    }
+
+    .client-details, .bank-signature {
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    table, th, td {
+      border: 1px solid #000;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      background-color: #0c1e36;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .btn:hover {
+      background-color: #1e3a6b;
+    }
+
+    textarea, input {
+      width: 100%;
+      border: none;
+      background: none;
+      outline: none;
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: #999; /* Slightly darker for better visibility */
+    }
+
+    .actions {
+      text-align: center;
+    }
+
+    #popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      display: none;
+      z-index: 1000;
+      overflow-y: auto;
+    }
+
+    #popupContent {
+      background: white;
+      padding: 20px;
+      max-width: 900px;
+      width: 100%;
+      border-radius: 10px;
+      position: relative;
+      max-height: 95vh;
+      overflow-y: auto;
+    }
+
+    #popupContent .btn {
+      margin-top: 10px;
+    }
+
+    .close-btn {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    #signaturePreview {
+      max-width: 150px; /* Adjusted for better display */
+      margin-top: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .invoice-header, .invoice-details {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="invoice-container" id="invoice">
+    <div class="invoice-header">
+      <img src="logo.png" alt="NSA Logo">
+      <div class="center-text">
+        <h2>NSA Global Sports</h2>
+        <p>1/B Station Road, Bhatthouse, Liluah, Howrah, 711204</p>
+      </div>
+      <div class="right-text">
+        <p>Phone: 8583822564</p>
+        <p>Email: nsaglbalsports@gmail.com</p>
+        <p>Website: <a href="https://nsaglobalsports.netlify.app" target="_blank">nsaglobalsports.netlify.app</a></p>
+      </div>
+    </div>
+
+    <p><strong>Games Covered:</strong> Badminton, Kabaddi, Volleyball, Pickleball, Tennis, Basketball, Football, etc.</p>
+    <hr>
+
+    <div class="invoice-details">
+      <div><strong>Invoice No:</strong> <span id="quotationId"></span></div>
+      <div><strong>Date:</strong> <span id="currentDate"></span></div>
+    </div>
+
+    <div class="client-details">
+      <h3>Client Details</h3>
+      <p>Name: <input id="clientName" placeholder="Client Name"></p>
+      <p>Address: <input id="clientAddress" placeholder="Client Address"></p>
+    </div>
+
+    <h3>Quotation Items</h3>
+    <table id="quotationTable">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Description</th>
+          <th>Qty</th>
+          <th>Rate</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td contenteditable="true">Synthetic Flooring</td>
+          <td contenteditable="true">Badminton Court</td>
+          <td contenteditable="true" oninput="updateTotal()">1</td>
+          <td contenteditable="true" oninput="updateTotal()">150000</td>
+          <td class="rowTotal">150000</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4" style="text-align:right">Subtotal</td>
+          <td id="subtotal">150000</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="text-align:right">GST (18%)</td>
+          <td contenteditable="true" id="gst" oninput="updateTotal()">27000</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="text-align:right"><strong>Grand Total</strong></td>
+          <td id="grandTotal">177000</td>
+        </tr>
+      </tfoot>
+    </table>
+    <button class="btn" onclick="addRow()">Add Row</button>
+
+    <h3>Terms & Conditions</h3>
+    <textarea id="terms" placeholder="Enter terms and conditions..."></textarea>
+
+    <div class="bank-signature">
+      <div style="width:60%; float:left">
+        <h4>Bank Details</h4>
+        <p>Bank Name: <input placeholder="Bank Name"></p>
+        <p>Account No: <input placeholder="Account Number"></p>
+        <p>IFSC: <input placeholder="IFSC Code"></p>
+      </div>
+      <div style="width:35%; float:right; text-align:right">
+        <h4>Authorized Signatory</h4>
+        <input type="file" accept="image/*" id="signatureInput" onchange="loadSignature(event)">
+        <img id="signaturePreview" alt="Signature Preview">
+      </div>
+      <div style="clear:both"></div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button class="btn" onclick="previewInvoice()">Preview</button>
+  </div>
+</div>
+
+<!-- Popup -->
+<div id="popup">
+  <div id="popupContent">
+    <span class="close-btn" onclick="closePopup()">&times;</span>
+    <div id="popupInvoice"></div>
+    <button class="btn" onclick="downloadPDF()">Download PDF</button>
+  </div>
+</div>
+
+<script>
+  document.getElementById("currentDate").textContent = new Date().toLocaleDateString();
+  const idKey = "nsaQuotationId";
+  const currentId = parseInt(localStorage.getItem(idKey) || "0") + 1;
+  localStorage.setItem(idKey, currentId);
+  document.getElementById("quotationId").textContent = "NSA-" + currentId.toString().padStart(4, '0');
+
+  let signatureBase64 = "";
+
+  function loadSignature(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      document.getElementById("signaturePreview").src = e.target.result;
+      signatureBase64 = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function addRow() {
+    const table = document.querySelector("#quotationTable tbody");
+    const row = table.insertRow();
+    for (let i = 0; i < 5; i++) {
+      const cell = row.insertCell();
+      cell.contentEditable = true;
+      cell.innerHTML = i >= 2 && i <= 4 ? "0" : "";
+      if (i === 2 || i === 3) cell.setAttribute("oninput", "updateTotal()");
+      if (i === 4) cell.className = "rowTotal";
+    }
+  }
+
+  function updateTotal() {
+    let subtotal = 0;
+    document.querySelectorAll("#quotationTable tbody tr").forEach(row => {
+      const qty = parseFloat(row.cells[2].innerText) || 0;
+      const rate = parseFloat(row.cells[3].innerText) || 0;
+      const total = qty * rate;
+      row.cells[4].innerText = total.toFixed(2);
+      subtotal += total;
+    });
+    const gst = parseFloat(document.getElementById("gst").innerText) || 0;
+    const grandTotal = subtotal + gst;
+    document.getElementById("subtotal").innerText = subtotal.toFixed(2);
+    document.getElementById("gst").innerText = gst.toFixed(2);
+    document.getElementById("grandTotal").innerText = grandTotal.toFixed(2);
+  }
+
+  function previewInvoice() {
+    updateTotal();
+    const popup = document.getElementById("popup");
+    const previewContainer = document.getElementById("popupInvoice");
+    const clone = document.getElementById("invoice").cloneNode(true);
+    previewContainer.innerHTML = "";
+    previewContainer.appendChild(clone);
+    popup.style.display = "flex";
+  }
+
+  function closePopup() {
+    document.getElementById("popup").style.display = "none";
+  }
+
+  function downloadPDF() {
+    const doc = new jsPDF();
+    doc.html(document.getElementById("popupInvoice"), {
+      callback: function (doc) {
+        doc.save('quotation.pdf');
+      },
+      margin: 10
+    });
+  }
+</script>
+</body>
+</html>

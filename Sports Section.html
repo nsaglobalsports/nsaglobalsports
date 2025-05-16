@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="title" content="Synthetic Acrylic Court Installation - NSA Global Sports" />
+  <meta name="description" content="Get professional synthetic acrylic court installation for badminton, tennis, and other sports. Durable, weather-proof, and low maintenance surfaces." />
+  <meta name="keywords" content="synthetic court, acrylic court, synthetic acrylic flooring, sports court installation, NSA Global Sports" />
+  <meta name="author" content="NSA Global Sports" />
+  <title>NSA Global Sports</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-..."
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+<!-- manifest.json ko link karein -->
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#007bff">
+
+<!-- Service Worker Register -->
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(function(registration) {
+        console.log('Service Worker registered with scope:', registration.scope);
+      })
+      .catch(function(error) {
+        console.log('Service Worker registration failed:', error);
+      });
+  }
+</script>
+
+
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    /* Header + Navbar Container */
+    .top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* CHANGE ADDED: space for menu icon */
+      padding: 10px 20px;
+      background-color: #0c1e36;
+      color: white;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      height: 50px;
+      margin-right: 15px;
+    }
+
+    .site-name {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .menu-icon { /* CHANGE ADDED: hamburger icon style */
+      display: none;
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      background-color: #142a4f;
+      padding: 10px 0;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: white;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      transition: background 0.3s;
+    }
+
+    .nav-links li a:hover {
+      background-color: #1e3a6b;
+      border-radius: 5px;
+    }
+
+    /* Responsive Navbar Changes */
+    @media (max-width: 768px) {
+      .site-name {
+        font-size: 1.4rem;
+      }
+
+      .logo {
+        height: 40px;
+      }
+
+      .nav-links {
+        display: none; /* CHANGE ADDED: hide menu by default */
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: #142a4f;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 100%;
+        padding: 10px 20px;
+        gap: 15px;
+      }
+
+      .nav-links.active { /* CHANGE ADDED: show menu when active */
+        display: flex;
+      }
+
+      .menu-icon { /* CHANGE ADDED: show hamburger in mobile */
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Fixed Top Bar (Header + Navbar) -->
+  <div class="top-bar">
+    <header class="header">
+      <div class="header-left">
+        <img src="logo.png" alt="NSA Logo" class="logo">
+        <h1 class="site-name">NSA Global Sports</h1>
+      </div>
+      <div class="menu-icon" onclick="toggleMenu()"> <!-- CHANGE ADDED -->
+        <i class="fas fa-bars"></i>
+      </div>
+    </header>
+
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="synthetic.html"><i class="fas fa-industry"></i> Sythentic Acrylic</a></li>
+        <li><a href="Sports Section.html"><i class="fas fa-basketball-ball"></i> Sports</a></li>
+        <li><a href="Gallery.html"><i class="fas fa-image"></i> Gallery</a></li>
+        <li><a href="Projects.html" class="projects"><i class="fas fa-briefcase"></i> Projects</a></li>
+        <li><a href="Services.html"><i class="fas fa-cogs"></i> Services</a></li>
+        <li><a href="Contact us.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+  <!-- NAVBAR TOGGLE SCRIPT -->
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('active'); // CHANGE ADDED
+    }
+  </script>
+
+  
+
+
+<!-- Hero Section -->
+<!-- <style>
+  .hero-section {
+    padding-top: 130px; /* Fixed navbar adjustment */
+    height: 50vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('https://images.unsplash.com/photo-1605875243847-2f5a50f79d2e?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-section h2 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px #000;
+  }
+
+  .hero-section p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 4px #000;
+  }
+
+  .hero-btn {
+    background-color: #ffcc00;
+    color: #000;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  }
+
+  .hero-btn:hover {
+    background-color: #e6b800;
+  }
+
+  @media (max-width: 768px) {
+    .hero-section h2 {
+      font-size: 2.2rem;
+    }
+
+    .hero-section p {
+      font-size: 1rem;
+      padding: 0 15px;
+    }
+
+    .hero-btn {
+      padding: 10px 20px;
+    }
+  }
+</style>
+
+<section class="hero-section">
+  <h2>Unleash Your Potential with NSA Global Sports</h2>
+  <p>Top-notch synthetic courts and surfaces for badminton, basketball, tennis, kabaddi, and more – designed to elevate your game.</p>
+  <button class="hero-btn">Explore Our Services</button>
+</section> -->
+
+
+
+
+
+<!-- sports-section -->
+<style>
+  .sports-section {
+    padding: 80px 20px;
+    padding-top: 140px;
+    background-color: #f4f8fc;
+  }
+
+  .sports-title {
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #0c1e36;
+    margin-bottom: 50px;
+  }
+
+  .sports-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    max-width: 1300px;
+    margin: auto;
+    margin-bottom: 60px;
+    align-items: center;
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+
+  .sports-grid img {
+    width: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+  }
+
+  .sports-content h2 {
+    font-size: 2rem;
+    color: #142a4f;
+    margin-bottom: 15px;
+  }
+
+  .sports-content p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  .sports-content .more-btn {
+    background-color: #ffba08;
+    color: #000;
+    border: none;
+    padding: 12px 20px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+  }
+
+  .sports-content .more-btn:hover {
+    background-color: #e0a800;
+  }
+
+  @media (max-width: 768px) {
+    .sports-grid {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    .sports-content {
+      padding-top: 20px;
+    }
+  }
+</style>
+
+<section class="sports-section">
+  <h1 class="sports-title">Our Sports Courts</h1>
+
+  <!-- Example 1: Badminton -->
+  <div class="sports-grid">
+    <img src="D:\Website\img\badminton.jpg" alt="Badminton Court">
+    <div class="sports-content">
+      <h2>Badminton Court</h2>
+      <p>Experience the best synthetic badminton courts with anti-skid surfaces, perfect for tournaments and training. Designed to enhance players' safety, speed, and performance.</p>
+      <a href="badminton.html" class="more-btn">More Details</a>
+    </div>
+  </div>
+
+  <!-- Example 2: Tennis -->
+  <div class="sports-grid">
+    <img src="https://images.unsplash.com/photo-1571877227200-fb67b7c4ed05?auto=format&fit=crop&w=800&q=80" alt="Tennis Court">
+    <div class="sports-content">
+      <h2>Tennis Court</h2>
+      <p>Our tennis courts are built with ITF-approved surfaces, ensuring accurate ball bounce, excellent durability, and a premium playing experience for professionals and enthusiasts alike.</p>
+      <a href="tennis.html" class="more-btn">More Details</a>
+    </div>
+  </div>
+
+  <!-- Example 3: Handball -->
+  <div class="sports-grid">
+    <img src="https://images.unsplash.com/photo-1630501685344-732acb4e7717?auto=format&fit=crop&w=800&q=80" alt="Handball Court">
+    <div class="sports-content">
+      <h2>Handball Court</h2>
+      <p>Designed for high-intensity handball matches, our courts feature shock-absorbing surfaces that reduce injuries and maximize player performance under all weather conditions.</p>
+      <a href="handball.html" class="more-btn">More Details</a>
+    </div>
+  </div>
+
+  <!-- Example 4: Pickleball -->
+  <div class="sports-grid">
+    <img src="https://images.unsplash.com/photo-1621479039838-08d0ac3d96c1?auto=format&fit=crop&w=800&q=80" alt="Pickleball Court">
+    <div class="sports-content">
+      <h2>Pickleball Court</h2>
+      <p>Our pickleball courts are crafted with premium acrylic materials, offering a smooth, non-slip surface tailored for fast-paced and fun gameplay, suitable for all skill levels.</p>
+      <a href="picklebal.html" class="more-btn">More Details</a>
+    </div>
+  </div>
+
+  <!-- Example 5: Volleyball -->
+  <div class="sports-grid">
+    <img src="https://images.unsplash.com/photo-1618886619401-c8eec62a1c1c?auto=format&fit=crop&w=800&q=80" alt="Volleyball Court">
+    <div class="sports-content">
+      <h2>Volleyball Court</h2>
+      <p>Built for both indoor and outdoor play, our volleyball courts use high-performance surfaces that boost player agility and ensure excellent grip and shock absorption.</p>
+      <a href="volleyball.html" class="more-btn">More Details</a>
+    </div>
+  </div>
+
+  <!-- Example 6: Basketball -->
+  <div class="sports-grid">
+    <img src="https://images.unsplash.com/photo-1577471525683-02e0ba6e4a6c?auto=format&fit=crop&w=800&q=80" alt="Basketball Court">
+    <div class="sports-content">
+      <h2>Basketball Court</h2>
+      <p>FIBA-standard basketball courts with superior acrylic or PU surfaces that deliver consistent ball bounce, traction, and player comfort, ideal for competitive matches.</p>
+      <a href="basketball.html" class="more-btn">More Details</a>
+    </div>
+  </div>
+
+  <!-- Example 7: Skating & Running Track -->
+  <div class="sports-grid">
+    <img src="https://images.unsplash.com/photo-1594562107284-919df775d3ef?auto=format&fit=crop&w=800&q=80" alt="Running Track">
+    <div class="sports-content">
+      <h2>Skating & Running Track</h2>
+      <p>High-quality, anti-skid, and UV-resistant tracks designed for speed, safety, and durability, perfect for both amateur and professional skating and running events.</p>
+      <a href="sr track.html" class="more-btn">More Details</a>
+    </div>
+  </div>
+
+  <!-- Example 8: Kabaddi -->
+  <div class="sports-grid">
+    <img src="https://images.unsplash.com/photo-1612457248585-f3c24d4546fd?auto=format&fit=crop&w=800&q=80" alt="Kabaddi Court">
+    <div class="sports-content">
+      <h2>Kabaddi Court</h2>
+      <p>Engineered surfaces for kabaddi courts offering firm grip, impact protection, and weather resistance, ensuring dynamic and powerful gameplay for national and local events.</p>
+      <a href="kabaddi.html" class="more-btn">More Details</a>
+    </div>
+  </div>
+
+  <!-- Example 9: Football -->
+  <div class="sports-grid">
+    <img src="https://images.unsplash.com/photo-1642700381613-499b8cf56e90?auto=format&fit=crop&w=800&q=80" alt="PP Tiles Court">
+    <div class="sports-content">
+      <h2>Football Court</h2>
+      <p>Durable, weatherproof polypropylene (PP) tiles ideal for outdoor sports courts, offering quick installation, superior grip, and excellent drainage even after heavy rain.</p>
+      <a href="football" class="more-btn">More Details</a>
+    </div>
+  </div>
+
+  <!-- Example 10: Artificial Grass -->
+  <!-- <div class="sports-grid">
+    <img src="https://images.unsplash.com/photo-1587241321924-3ac893b44d38?auto=format&fit=crop&w=800&q=80" alt="Artificial Grass Court">
+    <div class="sports-content">
+      <h2>Artificial Grass</h2>
+      <p>Premium artificial turf for multiple sports applications, providing natural grass-like performance with minimal maintenance, UV protection, and long-lasting aesthetics.</p>
+      <a href="#" class="more-btn">More Details</a>
+    </div>
+  </div> -->
+
+</section>
+
+
+
+
+
+
+
+<!-- Footer -->
+<style>
+  .footer {
+    background-color: #0c1e36;
+    color: white;
+    padding: 50px 20px 20px;
+    position: relative;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1500px;
+    margin: auto;
+    gap: 30px;
+  }
+
+  .footer-col {
+    flex: 1 1 250px;
+  }
+
+  .footer-center {
+    background-color: #1b2f52;
+    padding: 25px 20px;
+    border-radius: 12px;
+  }
+
+  .footer-col.right-col {
+    margin-left: auto; /* Pushes it to the right */
+    text-align: right; /* Aligns text to right */
+  }
+
+  .footer h3 {
+    color: #ffba08;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+
+  .footer p,
+  .footer a {
+    color: #ccc;
+    font-size: 0.95rem;
+    text-decoration: none;
+    margin: 5px 0;
+    display: block;
+  }
+
+  .footer a:hover {
+    color: #ffba08;
+  }
+
+  .social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .social-links a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.95rem;
+  }
+
+  .copyright {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.85rem;
+    color: #bbb;
+  }
+
+  /* WhatsApp Floating Button */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    z-index: 999;
+    transition: transform 0.3s;
+  }
+
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: #1ebe5d;
+  }
+</style>
+
+<footer class="footer" id="contact">
+  <div class="footer-container">
+
+    <!-- Left Column -->
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <a href="index.html">Home</a>
+      <a href="Contact us.html">About</a>
+      <a href="Projects.html">Projects</a>
+    </div>
+
+    <!-- Center Column -->
+    <div class="footer-col footer-center">
+      <h3>Contact Us</h3>
+      <p>Email: nsaglobalsports@gmail.com</p>
+      <p>Phone: +91-8583822564</p>
+      <h3 style="margin-top: 20px;">Follow Us</h3>
+      <div class="social-links">
+        <a href="https://www.facebook.com/profile.php?id=61566802228099"><i class="fab fa-facebook"></i> Facebook</a>
+        <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://youtube.com/@nsaglobalsports?si=6ys3CeP0Qpa5NCL-"><i class="fab fa-youtube"></i> YouTube</a><!-- 
+        <a href="#"><i class="fab fa-twitter"></i> Twitter</a> -->
+      </div>
+    </div>
+
+    <!-- Right Column (Aligned to right) -->
+    <div class="footer-col right-col">
+      <h3>External Links</h3>
+      <a href="https://www.olympics.com/en/">Olympic Games</a>
+      <a href="https://sportsauthorityofindia.nic.in/">Sports Authority of India</a>
+      <a href="https://kheloindia.gov.in/">Khelo India</a>
+      <a href="https://yas.gov.in/">Ministry of Youth Affairs and Sports</a>
+      <a href="https://nsfoi.com/">NSFOI</a>
+    </div>
+
+  </div>
+
+  <div class="copyright">
+    &copy; 2025 NSA Global Sports. All rights reserved.
+  </div>
+</footer>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/918583822564" class="whatsapp-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Font Awesome (only once per page) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+</body>
+</html>

@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="title" content="Synthetic Acrylic Court Installation - NSA Global Sports" />
+  <meta name="description" content="Get professional synthetic acrylic court installation for badminton, tennis, and other sports. Durable, weather-proof, and low maintenance surfaces." />
+  <meta name="keywords" content="synthetic court, acrylic court, synthetic acrylic flooring, sports court installation, NSA Global Sports" />
+  <meta name="author" content="NSA Global Sports" />
+  <title>NSA Global Sports</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-..."
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+<!-- manifest.json ko link karein -->
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#007bff">
+
+<!-- Service Worker Register -->
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(function(registration) {
+        console.log('Service Worker registered with scope:', registration.scope);
+      })
+      .catch(function(error) {
+        console.log('Service Worker registration failed:', error);
+      });
+  }
+</script>
+
+
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    /* Header + Navbar Container */
+    .top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* CHANGE ADDED: space for menu icon */
+      padding: 10px 20px;
+      background-color: #0c1e36;
+      color: white;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      height: 50px;
+      margin-right: 15px;
+    }
+
+    .site-name {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .menu-icon { /* CHANGE ADDED: hamburger icon style */
+      display: none;
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      background-color: #142a4f;
+      padding: 10px 0;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: white;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      transition: background 0.3s;
+    }
+
+    .nav-links li a:hover {
+      background-color: #1e3a6b;
+      border-radius: 5px;
+    }
+
+    /* Responsive Navbar Changes */
+    @media (max-width: 768px) {
+      .site-name {
+        font-size: 1.4rem;
+      }
+
+      .logo {
+        height: 40px;
+      }
+
+      .nav-links {
+        display: none; /* CHANGE ADDED: hide menu by default */
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: #142a4f;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 100%;
+        padding: 10px 20px;
+        gap: 15px;
+      }
+
+      .nav-links.active { /* CHANGE ADDED: show menu when active */
+        display: flex;
+      }
+
+      .menu-icon { /* CHANGE ADDED: show hamburger in mobile */
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Fixed Top Bar (Header + Navbar) -->
+  <div class="top-bar">
+    <header class="header">
+      <div class="header-left">
+        <img src="logo.png" alt="NSA Logo" class="logo">
+        <h1 class="site-name">NSA Global Sports</h1>
+      </div>
+      <div class="menu-icon" onclick="toggleMenu()"> <!-- CHANGE ADDED -->
+        <i class="fas fa-bars"></i>
+      </div>
+    </header>
+
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="synthetic.html"><i class="fas fa-industry"></i> Sythentic Acrylic</a></li>
+        <li><a href="Sports Section.html"><i class="fas fa-basketball-ball"></i> Sports</a></li>
+        <li><a href="Gallery.html"><i class="fas fa-image"></i> Gallery</a></li>
+        <li><a href="Projects.html" class="projects"><i class="fas fa-briefcase"></i> Projects</a></li>
+        <li><a href="Services.html"><i class="fas fa-cogs"></i> Services</a></li>
+        <li><a href="Contact us.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+  <!-- NAVBAR TOGGLE SCRIPT -->
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('active'); // CHANGE ADDED
+    }
+  </script>
+
+
+
+<style>
+  .court-section {
+    padding: 150px 20px 60px;
+    background: linear-gradient(135deg, #4caf50, #2196f3);
+    text-align: center;
+  }
+
+  .court-section h1 {
+    font-size: 3.8rem;
+    padding-top: 40px;
+    color: #ffffff; /* White color for better contrast */
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+  }
+
+  .court-section h2 {
+    font-size: 2.2rem;
+    color: #ffeb3b; /* Light Yellow for contrast */
+    margin-bottom: 50px;
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  .content-container {
+    max-width: 1200px;
+    margin: auto;
+    text-align: left;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    color: #f57c00;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .section-title::after {
+    content: "";
+    width: 60px;
+    height: 4px;
+    background: #f57c00;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    border-radius: 2px;
+  }
+
+  .intro {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.8;
+    font-weight: 400;
+  }
+
+  .content-container ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+  }
+
+  .content-container ul li {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .content-container ul li::before {
+    content: "\2714"; /* ✔️ tick mark Unicode */
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 1.2rem;
+    color: #ff5722; /* Orange color tick */
+    font-weight: bold;
+  }
+
+  .court-image {
+    margin: 40px 0;
+    text-align: center;
+  }
+
+  .court-image img {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .disclaimer {
+    margin-top: 40px;
+    font-size: 0.95rem;
+    color: #555;
+    background: #fff8e1;
+    padding: 20px;
+    border-left: 5px solid #ff9800;
+    border-radius: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .court-section h1 {
+      font-size: 2.8rem;
+    }
+
+    .court-section h2 {
+      font-size: 1.6rem;
+    }
+
+    .content-container {
+      padding: 20px;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+    }
+
+    .content-container ul li {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+<section class="court-section">
+  <h1>Football Court</h1>
+  <h2>Explore the Excitement of Football</h2>
+  <div class="content-container">
+    <p class="intro">
+      Football, also known as soccer in some regions, is one of the most popular sports globally. Played between two teams of 11 players each, the aim is to score goals by getting the ball into the opponent's net. Football is known for its thrilling pace, skillful plays, and passionate fans. Played both professionally and casually, it is a sport that unites people from all walks of life.
+    </p>
+
+    <div class="section-title">Game Facts and History</div>
+    <ul>
+      <li>The origins of modern football can be traced back to 1863 when the Football Association was formed in England.</li>
+      <li>Football is the world's most popular sport, with over 4 billion fans worldwide.</li>
+      <li>The first FIFA World Cup was held in 1930 in Uruguay, and it has been played every four years since then.</li>
+      <li>The sport has evolved into a professional, global industry with clubs and international teams competing at the highest levels.</li>
+      <li>The rules of the game, including the size of the field, the number of players, and the use of a round ball, have remained largely unchanged for over a century.</li>
+    </ul>
+
+    <div class="section-title">Court Measurements</div>
+    <ul>
+      <li>The standard football field length is between <strong>100 meters to 110 meters</strong>.</li>
+      <li>The width of the field should be between <strong>64 meters to 75 meters</strong>.</li>
+      <li>The goal area, or the "six-yard box," is <strong>5.5 meters</strong> from the goal line and <strong>18.5 meters</strong> wide.</li>
+      <li>The penalty area extends <strong>16.5 meters</strong> from the goal line and is <strong>40 meters</strong> wide.</li>
+      <li>The center circle has a radius of <strong>9.15 meters</strong>.</li>
+    </ul>
+
+    <div class="section-title">Net Specifications</div>
+    <ul>
+      <li>The football goal posts are <strong>7.32 meters</strong> wide and <strong>2.44 meters</strong> high.</li>
+      <li>The goal net is typically made of durable, strong material like nylon or polypropylene.</li>
+      <li>The net must be securely fastened to the goalposts to prevent the ball from passing through the back of the goal.</li>
+      <li>The net is designed to withstand the force of high-speed balls, ensuring safety and durability during play.</li>
+    </ul>
+
+    <div class="court-image">
+      <img src="football-court.jpg" alt="Football Court">
+    </div>
+
+    <div class="disclaimer">
+      <strong>Disclaimer:</strong> The specifications listed above are based on the standard regulations used in FIFA competitions. Local variations may exist depending on the level of play or the type of event.
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<!-- Footer -->
+<style>
+  .footer {
+    background-color: #0c1e36;
+    color: white;
+    padding: 50px 20px 20px;
+    position: relative;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1500px;
+    margin: auto;
+    gap: 30px;
+  }
+
+  .footer-col {
+    flex: 1 1 250px;
+  }
+
+  .footer-center {
+    background-color: #1b2f52;
+    padding: 25px 20px;
+    border-radius: 12px;
+  }
+
+  .footer-col.right-col {
+    margin-left: auto; /* Pushes it to the right */
+    text-align: right; /* Aligns text to right */
+  }
+
+  .footer h3 {
+    color: #ffba08;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+
+  .footer p,
+  .footer a {
+    color: #ccc;
+    font-size: 0.95rem;
+    text-decoration: none;
+    margin: 5px 0;
+    display: block;
+  }
+
+  .footer a:hover {
+    color: #ffba08;
+  }
+
+  .social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .social-links a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.95rem;
+  }
+
+  .copyright {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.85rem;
+    color: #bbb;
+  }
+
+  /* WhatsApp Floating Button */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    z-index: 999;
+    transition: transform 0.3s;
+  }
+
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: #1ebe5d;
+  }
+</style>
+
+<footer class="footer" id="contact">
+  <div class="footer-container">
+
+    <!-- Left Column -->
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <a href="index.html">Home</a>
+      <a href="Contact us.html">About</a>
+      <a href="Projects.html">Projects</a>
+    </div>
+
+    <!-- Center Column -->
+    <div class="footer-col footer-center">
+      <h3>Contact Us</h3>
+      <p>Email: nsaglobalsports@gmail.com</p>
+      <p>Phone: +91-8583822564</p>
+      <h3 style="margin-top: 20px;">Follow Us</h3>
+      <div class="social-links">
+        <a href="https://www.facebook.com/profile.php?id=61566802228099"><i class="fab fa-facebook"></i> Facebook</a>
+        <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://youtube.com/@nsaglobalsports?si=6ys3CeP0Qpa5NCL-"><i class="fab fa-youtube"></i> YouTube</a><!-- 
+        <a href="#"><i class="fab fa-twitter"></i> Twitter</a> -->
+      </div>
+    </div>
+
+    <!-- Right Column (Aligned to right) -->
+    <div class="footer-col right-col">
+      <h3>External Links</h3>
+      <a href="https://www.olympics.com/en/">Olympic Games</a>
+      <a href="https://sportsauthorityofindia.nic.in/">Sports Authority of India</a>
+      <a href="https://kheloindia.gov.in/">Khelo India</a>
+      <a href="https://yas.gov.in/">Ministry of Youth Affairs and Sports</a>
+      <a href="https://nsfoi.com/">NSFOI</a>
+    </div>
+
+  </div>
+
+  <div class="copyright">
+    &copy; 2025 NSA Global Sports. All rights reserved.
+  </div>
+</footer>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/918583822564" class="whatsapp-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Font Awesome (only once per page) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+</body>
+</html>
